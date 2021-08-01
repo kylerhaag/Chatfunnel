@@ -1,7 +1,11 @@
 
 
-def get_temperature_by_city(city: str = "Provo"):
-    temperature = temperature_data.get(city, 76)
+def get_temperature_by_city(city):
+    city = city.lower()
+    if city in temperature_data:
+        temperature = temperature_data.get(city)
+    else:
+        temperature = "unknown!"
     return temperature
 
 
